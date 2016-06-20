@@ -1,0 +1,27 @@
+{
+  "name": "react-comments",
+  "version": "1.0.0",
+  "description": "simple react comments",
+  "main": "./server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "comments"
+  ],
+  "author": "jhonata r",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "react": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "compression": "^1.6.2",
+    "path": "^0.12.7",
+    "webpack": "^1.13.1"
+  }
+}
