@@ -20,7 +20,7 @@ const config = {
 		inline: true,
 		port: 3000,
 		host: 'localhost',
-	}
+	},
 
 	devtool: 'eval',
 
@@ -33,7 +33,7 @@ const config = {
 		//Enable HMR
 		new webpack.HotModuleReplacementPlugin(),
 		// Allows erros and warnings but does not stop compiling
-		new webpack.NoErrosPlugins,
+		new webpack.NoErrorsPlugin(),
 		//Move Files
 		new TransferWebpackPlugin([
 			{from: 'www'},
@@ -44,7 +44,7 @@ const config = {
 			{
 				test: /\.js$/, // All .js files
 				loaders: ['react-hot', 'babel-loader'],
-				exclude: 'nodeModulesPath',
+				exclude: [nodeModulesPath],
 			},
 		],
 	},
