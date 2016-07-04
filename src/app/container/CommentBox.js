@@ -2,19 +2,19 @@
  * Created by jhonataalmeida on 6/28/16.
  */
 import React, { Component, PropType } from 'react';
+import CommentList from "../components/CommentList/CommentList";
+import CommentForm from "../components/CommentForm/CommentForm";
 
-class Main extends Component {
+class CommentBox extends Component {
 	render() {
-
-		const data = [
-			{id: 1, author: "Jhonata Ribeiro", text: "This is one comment"},
-			{id: 2, author: "Jhon Stuart", text: "This is *another* comment"}
-		];
-
+		console.log("state: " + this.props)
 		return (
-			<div>Comments</div>
+			<div>Comments
+				<CommentForm/>
+				<CommentList data={ this.props.data }/>
+			</div>
 		);
 	}
 }
 
-export default Main;
+export default CommentBox;
