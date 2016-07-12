@@ -7,14 +7,17 @@ import React, { Component, PropType } from 'react';
 class CommentForm extends Component{
 	constructor(){
 		super();
-		this.state = {author:'', text:''}
+		this.state = {author:'', text:''};
+		this.onChangeAuthorState = this.onChangeAuthorState.bind(this);
+		this.onChangeTextState = this.onChangeTextState.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleAuthorState(e){
+	onChangeAuthorState(e){
 		this.setState({author:e.target.value});
 	}
 
-	handleTextState(e){
+	onChangeTextState(e){
 		this.setState({text:e.target.value});
 	}
 
@@ -35,12 +38,12 @@ class CommentForm extends Component{
 				<input type="text"
 				       placeholder="your-name"
 				       value={this.state.author}
-				       onChange={this.handleAuthorState}
+				       onChange={this.onChangeAuthorState}
 					/>
 				<input type="text"
 				       placeholder="say something"
 				       value={this.state.text}
-				       onChange={this.handleTextState}
+				       onChange={this.onChangeTextState}
 					/>
 				<input type="submit" value="Send"></input>
 			</form>
