@@ -9,18 +9,28 @@ class CommentBox extends Component {
 	
 	constructor(props){
 		super(props);
-		this.state = {}
+		this.state = {
+			data : [
+			{id: 1, author: "Jhonata Ribeiro", text: "This is one comment"},
+			{id: 2, author: "Jhon Stuart", text: "This is *another* comment"}
+			]
+		}
+		this.handleCommentsSubmit = this.handleCommentsSubmit.bind(this);
 	}
 
 	handleCommentsSubmit(comment){
-		console.log("handleCommentsSubmit: " + comment);
+		comment.id = Date.now();
+		var comments = this.state.data;
+		var newComments = comments.concat([comment]);
+		this.setState({data:newComments});
 	}
 	
 	render() {
+
 		return (
 			<div>
 				<CommentForm onCommentSubmit={ this.handleCommentsSubmit }/>
-				<CommentList data={ this.props.data }/>
+				<CommentList data={ this.state.data }/>
 			</div>
 		);
 	}
