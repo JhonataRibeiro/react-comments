@@ -10,7 +10,6 @@ class CommentList extends Component{
 		var commentNodes = this.props.data.map((comment) => {
 			return(
 				<Comments author={comment.author} key={comment.id} text={comment.text}>
-					lala
 				</Comments>
 			);
 		})
