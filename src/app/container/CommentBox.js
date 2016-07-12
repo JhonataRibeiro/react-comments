@@ -6,11 +6,20 @@ import CommentList from "../components/CommentList/CommentList";
 import CommentForm from "../components/CommentForm/CommentForm";
 
 class CommentBox extends Component {
+	
+	constructor(props){
+		super(props);
+		this.state = {}
+	}
+
+	handleCommentsSubmit(comment){
+		console.log("handleCommentsSubmit: " + comment);
+	}
+	
 	render() {
-		console.log("state: " + this.props)
 		return (
-			<div>Comments
-				<CommentForm/>
+			<div>
+				<CommentForm onCommentSubmit={ this.handleCommentsSubmit }/>
 				<CommentList data={ this.props.data }/>
 			</div>
 		);
