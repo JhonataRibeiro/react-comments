@@ -11,10 +11,11 @@ class Comments extends Component{
 		this.rawMarkup = this.rawMarkup.bind(this);
 	}
 
-	rawMarkup(){
-		var md = new Remarkable();
-		var markup = md.render(this.props.children.toString());
-		return{ __html:markup };
+	rawMarkup() {
+		console.log("called rawMarkup")
+		const md = new Remarkable();
+		const rawMarkup = md.render(this.props.children.toString());
+		return { __html: rawMarkup };
 	}
 
 	render(){

@@ -29,8 +29,8 @@ class CommentBox extends Component {
 
 		return (
 			<div>
-				<CommentForm onCommentSubmit={ this.handleCommentsSubmit }/>
 				<CommentList data={ this.state.data }/>
+				<CommentForm onCommentSubmit={ this.handleCommentsSubmit }/>
 			</div>
 		);
 	}
